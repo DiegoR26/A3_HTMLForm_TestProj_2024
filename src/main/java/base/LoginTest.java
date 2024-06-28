@@ -1,2 +1,4 @@
-package base;public class LoginTest {
+package base;
+
+public class LoginTest {
 }
