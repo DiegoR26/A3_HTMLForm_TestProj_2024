@@ -1,57 +1,222 @@
 <!DOCTYPE html>
-<html lang="pr-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>Página de Login</title>
-    </head>
-    <body>
-        <div class="container">
-            <header>
-                <div id="logoFADERGS"></div>
+<html lang="pt-BR">
 
-                <div id="headerTitle">
-                    <p>Gestão e Qualidade de Software - 2024/1</p><br>
-                    <p>Projeto A3</p>
-                </div>
-                    
-                <div id="logoANIMA"></div>
-            </header>
-            
-            <main>
-                <div id="navBar">
-                    |
-                    <a href="./LoginPage.HTML">Pagina de Login</a> |
-                    <a href="./UserCRUD.html">Usuários</a> |
-                    <a href="./ClientCRUD.html">Clientes</a> |
-                    <a href="./ExpenseCRUD.html">Despesas</a> |
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Página de Login</title>
+    <style>
+        .hidden {
+            display: none;
+        }
 
-                <div id="testContent">
-                    <div id="TCTitle">
-                        Página de Login
-                    </div>
+        #loginUsuario,
+        #senhaUsuario,
+        #signupNome,
+        #signupEmail,
+        #signupSenha {
+            width: 200px;
+            height: 25px;
+        }
 
-                    <div id="TCMainContent">
+        #textlogin {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
 
-                        <label for="loginUsuario">Login</label>
+        #efetuarLogin,
+        #criarLogin {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #criarLogin {
+            background-color: #04911b;
+        }
+
+        #efetuarLogin:hover {
+            background-color: #0056b3;
+        }
+
+        #criarLogin:hover {
+            background-color: #00ad1d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="logoFADERGS"></div>
+            <div id="headerTitle">
+                <p>Gestão e Qualidade de Software - 2024/1</p><br>
+                <p>Projeto A3</p>
+            </div>
+            <div id="logoANIMA"></div>
+        </header>
+
+        <main>
+            <div id="navBar">
+                |
+                <a href="./LoginPage.HTML">Pagina de Login</a> |
+                <a href="./UserCRUD.html">Usuários</a> |
+                <a href="./ClientCRUD.html">Clientes</a> |
+                <a href="#" id="despesasLink" onclick="acessarDespesas()">Despesas</a> |
+            </div>
+
+            <div id="testContent">
+                <div id="TCTitle">Página de Login</div>
+
+                <div id="TCMainContent">
+
+                    <!-- Formulário de Login -->
+                    <div class="form-container" id="loginForm">
+                        <style>
+                            #loginUsuario {
+                                width: 200px;
+                                height: 25px;
+                            }
+
+                            #senhaUsuario {
+                                width: 200px;
+                                height: 25px;
+                            }
+
+                            #textlogin {
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-weight: bold;
+                            }
+
+                            #efetuarLogin {
+                                padding: 10px 20px;
+                                background-color: #007bff;
+                                color: #fff;
+                                border: none;
+                                border-radius: 5px;
+                                cursor: pointer;
+                            }
+
+                            #efetuarLogin:hover {
+                                background-color: #0056b3;
+                            }
+
+                            #showSignupForm {
+                                padding: 10px 20px;
+                                background-color: #04911b;
+                                color: #fff;
+                                border: none;
+                                border-radius: 5px;
+                                cursor: pointer;
+                            }
+
+                            #showSignupForm:hover {
+                                background-color: #00ad1d;
+                            }
+                        </style>
+                        <label for="loginUsuario" id="textlogin">Login</label>
                         <input type="text" id="loginUsuario">
 
-                        <label for="senhaUsuario">Senha</label>
+                        <label for="senhaUsuario" id="textlogin">Senha</label>
                         <input type="password" id="senhaUsuario">
 
-                        <button id="efetuarLogin">Login</button>
-                        
+                        <button id="efetuarLogin" onclick="login()">Login</button>
+                        <button id="showSignupForm" onclick="toggleForms()">Criar Conta</button>
                     </div>
 
+                    <!-- Formulário de Criação de Conta -->
+                    <div class="form-container hidden" id="signupForm">
+                        <style>
+                            #criarConta {
+                                padding: 10px 20px;
+                                background-color: #04911b;
+                                color: #fff;
+                                border: none;
+                                border-radius: 5px;
+                                cursor: pointer;
+                            }
+
+                            #criarConta:hover {
+                                background-color: #00ad1d;
+                            }
+
+                            #showLoginForm {
+                                padding: 10px 20px;
+                                background-color: #740000;
+                                color: #fff;
+                                border: none;
+                                border-radius: 5px;
+                                cursor: pointer;
+                            }
+
+                            #showLoginForm:hover {
+                                background-color: #cf0606;
+                            }
+                        </style>
+                        <label for="signupNome" id="textlogin">Nome</label>
+                        <input type="text" id="signupNome">
+
+                        <label for="signupEmail" id="textlogin">Email</label>
+                        <input type="email" id="signupEmail">
+
+                        <label for="signupSenha" id="textlogin">Senha</label>
+                        <input type="password" id="signupSenha">
+
+                        <button id="criarConta" onclick="signup()">Criar Conta</button>
+                        <button id="showLoginForm" onclick="toggleForms()">Voltar ao Login</button>
+                    </div>
+
+                    <script>
+                        let isLoggedIn = false;
+
+                        function toggleForms() {
+                            const loginForm = document.getElementById('loginForm');
+                            const signupForm = document.getElementById('signupForm');
+                            loginForm.classList.toggle('hidden');
+                            signupForm.classList.toggle('hidden');
+                        }
+
+                        function login() {
+                            const usuario = document.getElementById('loginUsuario').value;
+                            const senha = document.getElementById('senhaUsuario').value;
+                            if (usuario && senha) {
+                                isLoggedIn = true;
+                                alert(`Login com usuário: ${usuario}`);
+                            } else {
+                                alert('Por favor, preencha todos os campos.');
+                            }
+                        }
+
+                        function signup() {
+                            const nome = document.getElementById('signupNome').value;
+                            const email = document.getElementById('signupEmail').value;
+                            const senha = document.getElementById('signupSenha').value;
+                            if (nome && email && senha) {
+                                alert(`Conta criada para: ${nome} com e-mail: ${email}`);
+                                toggleForms();
+                            } else {
+                                alert('Por favor, preencha todos os campos.');
+                            }
+                        }
+
+                        function acessarDespesas() {
+                            if (isLoggedIn) {
+                                window.location.href = './ExpenseCRUD.html';
+                            } else {
+                                alert('Você precisa estar logado para acessar as despesas. Por favor, crie uma conta.');
+                                toggleForms();
+                            }
+                        }
+                    </script>
                 </div>
-    
-            </main>
-    
-            <footer>
-    
-            </footer>
-        </div>
-    </body>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+
 </html>
