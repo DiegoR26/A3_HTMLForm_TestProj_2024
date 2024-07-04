@@ -1,2 +1,4 @@
-package pages;public class ExpensePage {
+package pages;
+
+public class ExpensePage {
 }
