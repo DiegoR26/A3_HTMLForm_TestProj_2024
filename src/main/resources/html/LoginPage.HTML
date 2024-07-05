@@ -38,48 +38,7 @@
 
                     <div id="LoginContainer">
                         <div class="form-container" id="loginForm">
-                            <!-- <style>
-                                #loginUsuario {
-                                    width: 200px;
-                                    height: 25px;
-                                }
-
-                                #senhaUsuario {
-                                    width: 200px;
-                                    height: 25px;
-                                }
-
-                                #textlogin {
-                                    font-family: Arial, Helvetica, sans-serif;
-                                    font-weight: bold;
-                                }
-
-                                #efetuarLogin {
-                                    padding: 10px 20px;
-                                    background-color: #007bff;
-                                    color: #fff;
-                                    border: none;
-                                    border-radius: 5px;
-                                    cursor: pointer;
-                                }
-
-                                #efetuarLogin:hover {
-                                    background-color: #0056b3;
-                                }
-
-                                #showSignupForm {
-                                    padding: 10px 20px;
-                                    background-color: #04911b;
-                                    color: #fff;
-                                    border: none;
-                                    border-radius: 5px;
-                                    cursor: pointer;
-                                }
-
-                                #showSignupForm:hover {
-                                    background-color: #00ad1d;
-                                }
-                            </style> -->
+                            
                             <div>
                                 <label for="loginUsuario" id="textlogin">Login</label>
                                 <input type="text" id="loginUsuario">
@@ -93,95 +52,6 @@
                                 <a href="">Esqueci minha senha</a>
                             </div>
                         </div>
-
-                        <!-- <div class="form-container hidden" id="signupForm">
-                             <style>
-                                #criarConta {
-                                    padding: 10px 20px;
-                                    background-color: #04911b;
-                                    color: #fff;
-                                    border: none;
-                                    border-radius: 5px;
-                                    cursor: pointer;
-                                }
-
-                                #criarConta:hover {
-                                    background-color: #00ad1d;
-                                }
-
-                                #showLoginForm {
-                                    padding: 10px 20px;
-                                    background-color: #740000;
-                                    color: #fff;
-                                    border: none;
-                                    border-radius: 5px;
-                                    cursor: pointer;
-                                }
-
-                                #showLoginForm:hover {
-                                    background-color: #cf0606;
-                                }
-                            </style>
-                            <div>
-                                <label for="signupNome" id="textlogin">Nome</label>
-                                <input type="text" id="signupNome">
-    
-                                <label for="signupEmail" id="textlogin">Email</label>
-                                <input type="email" id="signupEmail">
-    
-                                <label for="signupSenha" id="textlogin">Senha</label>
-                                <input type="password" id="signupSenha">
-
-                            </div>
-                            <div>
-                                <button id="criarConta" onclick="signup()">Criar Conta</button>
-                                <button id="showLoginForm" onclick="toggleForms()">Voltar ao Login</button>
-
-                            </div>
-                        </div>
-
-                        <script>
-                            let isLoggedIn = false;
-
-                            function toggleForms() {
-                                const loginForm = document.getElementById('loginForm');
-                                const signupForm = document.getElementById('signupForm');
-                                loginForm.classList.toggle('hidden');
-                                signupForm.classList.toggle('hidden');
-                            }
-
-                            function login() {
-                                const usuario = document.getElementById('loginUsuario').value;
-                                const senha = document.getElementById('senhaUsuario').value;
-                                if (usuario && senha) {
-                                    isLoggedIn = true;
-                                    alert(`Login com usuário: ${usuario}`);
-                                } else {
-                                    alert('Por favor, preencha todos os campos.');
-                                }
-                            }
-
-                            function signup() {
-                                const nome = document.getElementById('signupNome').value;
-                                const email = document.getElementById('signupEmail').value;
-                                const senha = document.getElementById('signupSenha').value;
-                                if (nome && email && senha) {
-                                    alert(`Conta criada para: ${nome} com e-mail: ${email}`);
-                                    toggleForms();
-                                } else {
-                                    alert('Por favor, preencha todos os campos.');
-                                }
-                            }
-
-                            function acessarDespesas() {
-                                if (isLoggedIn) {
-                                    window.location.href = './ExpenseCRUD.html';
-                                } else {
-                                    alert('Você precisa estar logado para acessar as despesas. Por favor, crie uma conta.');
-                                    toggleForms();
-                                }
-                            }
-                        </script> -->
 
                     </div>
                 </div>
