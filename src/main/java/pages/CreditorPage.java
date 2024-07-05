@@ -1,4 +1,8 @@
 package pages;
 
-public class ClientPage {
+public class CreditorPage extends BasePage {
+
+    public CreditorPage(WebDriver driver) {
+        super(driver);
+    }
 }

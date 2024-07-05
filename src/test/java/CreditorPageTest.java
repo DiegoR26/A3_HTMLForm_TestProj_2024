@@ -1,2 +1,2 @@
-public class ClientPageTest {
+public class CreditorPageTest {
 }

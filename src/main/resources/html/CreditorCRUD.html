@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Página de Credores</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div id="logoFADERGS"></div>
+
+                <div id="headerTitle">
+                    <p>Gestão e Qualidade de Software - 2024/1</p><br>
+                    <p>Projeto A3</p>
+                </div>
+                    
+                <div id="logoANIMA"></div>
+            </header>
+            
+            <main>
+                <div id="navBar">
+                    |
+                    <a href="./LoginPage.HTML">Login</a> |
+                    <a href="./UserCRUD.html">Usuários</a> |
+                    <a href="./CreditorCRUD.html">Credores</a> |
+                    <a href="./AddressCRUD.html">Bases</a> |
+                    <a href="./ExpenseCRUD.html">Despesas</a> |
+                    <a href="./EntryCRUD.html">Lançamentos</a> |
+                </div>
+
+                <div id="testContent">
+                    <div id="TCTitle">
+                        Credores
+                    </div>
+
+                    <div id="TCMainContent">
+                        <form id="credorForm">
+                            <label for="nomeCredor">Nome do Credor:</label>
+                            <input type="text" id="nomeCredor" name="nomeCredor" required><br>
+                        
+                            <label for="responsavelCredor">Responsável do Credor:</label>
+                            <input type="text" id="responsavelCredor" name="responsavelCredor" required><br>
+                        
+                            <label for="telefoneCredor">Telefone do Credor:</label>
+                            <input type="text" id="telefoneCredor" name="telefoneCredor" required><br>
+                        
+                            <label for="celularCredor">Celular do Credor:</label>
+                            <input type="text" id="celularCredor" name="celularCredor"><br>
+                        
+                            <label for="ativo">Ativo:</label>
+                            <select id="ativo" name="ativo">
+                              <option value="S">Sim</option>
+                              <option value="N">Não</option>
+                            </select><br>
+                        
+                            <button type="button" onclick="addCredor()">Adicionar Credor</button>
+                            <button type="button" onclick="updateCredor()">Atualizar Credor</button>
+                          </form>
+                        
+                          <h2>Lista de Credores</h2>
+                          <table id="credorTable">
+                            <thead>
+                              <tr>
+                                <th>Nome do Credor</th>
+                                <th>Responsável do Credor</th>
+                                <th>Telefone do Credor</th>
+                                <th>Celular do Credor</th>
+                                <th>Ativo</th>
+                                <th>Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              
+                            </tbody>
+                          </table>
+                        
+                          <script>
+                            let selectedRow = null;
+
+                            function addCredor() {
+                                const nomeCredor = document.getElementById('nomeCredor').value;
+                                const responsavelCredor = document.getElementById('responsavelCredor').value;
+                                const telefoneCredor = document.getElementById('telefoneCredor').value;
+                                const celularCredor = document.getElementById('celularCredor').value;
+                                const ativo = document.getElementById('ativo').value;
+                            
+                                if (selectedRow == null) {
+                                    const table = document.getElementById('credorTable').getElementsByTagName('tbody')[0];
+                                    const newRow = table.insertRow();
+                                
+                                    newRow.insertCell(0).innerHTML = nomeCredor;
+                                    newRow.insertCell(1).innerHTML = responsavelCredor;
+                                    newRow.insertCell(2).innerHTML = telefoneCredor;
+                                    newRow.insertCell(3).innerHTML = celularCredor;
+                                    newRow.insertCell(4).innerHTML = ativo;
+                                    newRow.insertCell(5).innerHTML = `<button onclick="editCredor(this)">Editar</button>
+                                                                  <button onclick="deleteCredor(this)">Excluir</button>`;
+                            
+                                    document.getElementById('credorForm').reset();
+                                } else {
+                                    updateCredor();
+                                }
+                            }
+
+                            function editCredor(td) {
+                                selectedRow = td.parentElement.parentElement;
+                                document.getElementById('nomeCredor').value = selectedRow.cells[0].innerHTML;
+                                document.getElementById('responsavelCredor').value = selectedRow.cells[1].innerHTML;
+                                document.getElementById('telefoneCredor').value = selectedRow.cells[2].innerHTML;
+                                document.getElementById('celularCredor').value = selectedRow.cells[3].innerHTML;
+                                document.getElementById('ativo').value = selectedRow.cells[4].innerHTML;
+                            }
+
+                            function updateCredor() {
+                                if (selectedRow != null) {
+                                    selectedRow.cells[0].innerHTML = document.getElementById('nomeCredor').value;
+                                    selectedRow.cells[1].innerHTML = document.getElementById('responsavelCredor').value;
+                                    selectedRow.cells[2].innerHTML = document.getElementById('telefoneCredor').value;
+                                    selectedRow.cells[3].innerHTML = document.getElementById('celularCredor').value;
+                                    selectedRow.cells[4].innerHTML = document.getElementById('ativo').value;
+
+                                    selectedRow = null;
+                                    document.getElementById('credorForm').reset();
+                                }
+                            }
+
+                            function deleteCredor(td) {
+                                if (confirm('Tem certeza que deseja excluir este credor?')) {
+                                const row = td.parentElement.parentElement;
+                                document.getElementById('credorTable').deleteRow(row.rowIndex);
+                                document.getElementById('credorForm').reset();
+                              }
+                            }
+
+                            
+                          </script>
+                        
+                    </div>
+
+                </div>
+    
+            </main>
+    
+            <footer>
+    
+            </footer>
+        </div>
+    </body>
+</html>
