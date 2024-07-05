@@ -136,6 +136,11 @@ tBody button {
     width: 70px;
 }
 
+#tableContainer {
+    max-height: 150px;
+    overflow-y: scroll;
+}
+
 /* -------------- Login ----------------*/
 
 #LoginContainer {
@@ -196,9 +201,6 @@ tBody button {
         font-size: 2vw;
     }
 
-    #ExpenseContent {
-        flex-direction: column;
-    }
 }
 
 @media (max-width: 500px) {

@@ -64,8 +64,8 @@
                     
                         <label for="ativo">Ativo:</label>
                         <select id="ativo" name="ativo">
-                          <option value="S">Sim</option>
-                          <option value="N">Não</option>
+                            <option value="S">Sim</option>
+                            <option value="N">Não</option>
                         </select><br>
                     
                         <label for="observacao">Observação:</label>
@@ -76,26 +76,28 @@
                       </form>
                     
                       <h2>Lista de Lançamentos</h2>
-                      <table id="lancamentoTable">
-                        <thead>
-                          <tr>
-                            <th>ID da Base</th>
-                            <th>ID do Usuário</th>
-                            <th>ID da Despesa</th>
-                            <th>Competência da Despesa</th>
-                            <th>Data de Vencimento</th>
-                            <th>Valor Original</th>
-                            <th>Valor da Multa</th>
-                            <th>Valor da Correção</th>
-                            <th>Ativo</th>
-                            <th>Observação</th>
-                            <th>Ações</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          
-                        </tbody>
-                      </table>
+                      <div id="tableContainer">
+                          <table id="lancamentoTable">
+                            <thead>
+                              <tr>
+                                <th>ID da Base</th>
+                                <th>ID do Usuário</th>
+                                <th>ID da Despesa</th>
+                                <th>Competência da Despesa</th>
+                                <th>Data de Vencimento</th>
+                                <th>Valor Original</th>
+                                <th>Valor da Multa</th>
+                                <th>Valor da Correção</th>
+                                <th>Ativo</th>
+                                <th>Observação</th>
+                                <th>Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              
+                            </tbody>
+                          </table>
+                      </div>
                     
                       <script>
                           let selectedRow = null;
