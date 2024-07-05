@@ -117,37 +117,37 @@
                             }
                         
                             function editUsuario(td) {
-                              selectedRow = td.parentElement.parentElement;
-                              document.getElementById('nomeUsuario').value = selectedRow.cells[0].innerHTML;
-                              document.getElementById('emailUsuario').value = selectedRow.cells[1].innerHTML;
-                              document.getElementById('loginUsuario').value = selectedRow.cells[2].innerHTML;
-                              document.getElementById('senhaUsuario').value = selectedRow.cells[3].innerHTML;
-                              document.getElementById('telefoneCelular').value = selectedRow.cells[4].innerHTML;
-                              document.getElementById('perfilUsuario').value = selectedRow.cells[5].innerHTML;
-                              document.getElementById('ativo').value = selectedRow.cells[6].innerHTML;
+                                selectedRow = td.parentElement.parentElement;
+                                document.getElementById('nomeUsuario').value = selectedRow.cells[0].innerHTML;
+                                document.getElementById('emailUsuario').value = selectedRow.cells[1].innerHTML;
+                                document.getElementById('loginUsuario').value = selectedRow.cells[2].innerHTML;
+                                document.getElementById('senhaUsuario').value = selectedRow.cells[3].innerHTML;
+                                document.getElementById('telefoneCelular').value = selectedRow.cells[4].innerHTML;
+                                document.getElementById('perfilUsuario').value = selectedRow.cells[5].innerHTML;
+                                document.getElementById('ativo').value = selectedRow.cells[6].innerHTML;
                             }
                         
                             function updateUsuario() {
-                              if (selectedRow != null) {
-                                selectedRow.cells[0].innerHTML = document.getElementById('nomeUsuario').value;
-                                selectedRow.cells[1].innerHTML = document.getElementById('emailUsuario').value;
-                                selectedRow.cells[2].innerHTML = document.getElementById('loginUsuario').value;
-                                selectedRow.cells[3].innerHTML = document.getElementById('senhaUsuario').value;
-                                selectedRow.cells[4].innerHTML = document.getElementById('telefoneCelular').value;
-                                selectedRow.cells[5].innerHTML = document.getElementById('perfilUsuario').value;
-                                selectedRow.cells[6].innerHTML = document.getElementById('ativo').value;
-                        
-                                selectedRow = null;
-                                document.getElementById('usuarioForm').reset();
-                              }
+                                if (selectedRow != null) {
+                                  selectedRow.cells[0].innerHTML = document.getElementById('nomeUsuario').value;
+                                  selectedRow.cells[1].innerHTML = document.getElementById('emailUsuario').value;
+                                  selectedRow.cells[2].innerHTML = document.getElementById('loginUsuario').value;
+                                  selectedRow.cells[3].innerHTML = document.getElementById('senhaUsuario').value;
+                                  selectedRow.cells[4].innerHTML = document.getElementById('telefoneCelular').value;
+                                  selectedRow.cells[5].innerHTML = document.getElementById('perfilUsuario').value;
+                                  selectedRow.cells[6].innerHTML = document.getElementById('ativo').value;
+                          
+                                  selectedRow = null;
+                                  document.getElementById('usuarioForm').reset();
+                                }
                             }
                         
                             function deleteUsuario(td) {
-                              if (confirm('Tem certeza que deseja excluir este usuário?')) {
-                                const row = td.parentElement.parentElement;
-                                document.getElementById('usuarioTable').deleteRow(row.rowIndex);
-                                document.getElementById('usuarioForm').reset();
-                              }
+                                if (confirm('Tem certeza que deseja excluir este usuário?')) {
+                                  const row = td.parentElement.parentElement;
+                                  document.getElementById('usuarioTable').deleteRow(row.rowIndex);
+                                  document.getElementById('usuarioForm').reset();
+                                }
                             }
                           </script>
 

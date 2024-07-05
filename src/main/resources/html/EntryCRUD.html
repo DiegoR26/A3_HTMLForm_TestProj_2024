@@ -72,6 +72,7 @@
                         <textarea id="observacao" name="observacao"></textarea><br>
                     
                         <button type="button" onclick="addLancamento()">Adicionar Lançamento</button>
+                        <button type="button" onclick="updateLancamento()">Atualizar Lançamento</button>
                       </form>
                     
                       <h2>Lista de Lançamentos</h2>
@@ -88,6 +89,7 @@
                             <th>Valor da Correção</th>
                             <th>Ativo</th>
                             <th>Observação</th>
+                            <th>Ações</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -96,45 +98,84 @@
                       </table>
                     
                       <script>
-                        function addLancamento() {
-                          const idBase = document.getElementById('idBase').value;
-                          const idUsuario = document.getElementById('idUsuario').value;
-                          const idDespesa = document.getElementById('idDespesa').value;
-                          const competenciaDespesa = document.getElementById('competenciaDespesa').value;
-                          const dataVencimento = document.getElementById('dataVencimento').value;
-                          const valorOriginal = document.getElementById('valorOriginal').value;
-                          const valorMulta = document.getElementById('valorMulta').value;
-                          const valorCorrecao = document.getElementById('valorCorrecao').value;
-                          const ativo = document.getElementById('ativo').value;
-                          const observacao = document.getElementById('observacao').value;                   
+                          let selectedRow = null;
 
-                          const table = document.getElementById('lancamentoTable').getElementsByTagName('tbody')[0];
-                          const newRow = table.insertRow();                   
+                          function addLancamento() {
+                              const idBase = document.getElementById('idBase').value;
+                              const idUsuario = document.getElementById('idUsuario').value;
+                              const idDespesa = document.getElementById('idDespesa').value;
+                              const competenciaDespesa = document.getElementById('competenciaDespesa').value;
+                              const dataVencimento = document.getElementById('dataVencimento').value;
+                              const valorOriginal = document.getElementById('valorOriginal').value;
+                              const valorMulta = document.getElementById('valorMulta').value;
+                              const valorCorrecao = document.getElementById('valorCorrecao').value;
+                              const ativo = document.getElementById('ativo').value;
+                              const observacao = document.getElementById('observacao').value;                   
 
-                          const cell1 = newRow.insertCell(0);
-                          const cell2 = newRow.insertCell(1);
-                          const cell3 = newRow.insertCell(2);
-                          const cell4 = newRow.insertCell(3);
-                          const cell5 = newRow.insertCell(4);
-                          const cell6 = newRow.insertCell(5);
-                          const cell7 = newRow.insertCell(6);
-                          const cell8 = newRow.insertCell(7);
-                          const cell9 = newRow.insertCell(8);
-                          const cell10 = newRow.insertCell(9);
-                    
-                          cell1.innerHTML = idBase;
-                          cell2.innerHTML = idUsuario;
-                          cell3.innerHTML = idDespesa;
-                          cell4.innerHTML = competenciaDespesa;
-                          cell5.innerHTML = dataVencimento;
-                          cell6.innerHTML = valorOriginal;
-                          cell7.innerHTML = valorMulta;
-                          cell8.innerHTML = valorCorrecao;
-                          cell9.innerHTML = ativo;
-                          cell10.innerHTML = observacao;
-                    
-                          document.getElementById('lancamentoForm').reset();
+                              if (selectedRow == null) {
+                                  const table = document.getElementById('lancamentoTable').getElementsByTagName('tbody')[0];
+                                  const newRow = table.insertRow();                   
+        
+                                  newRow.insertCell(0).innerHTML = idBase;
+                                  newRow.insertCell(1).innerHTML = idUsuario;
+                                  newRow.insertCell(2).innerHTML = idDespesa;
+                                  newRow.insertCell(3).innerHTML = competenciaDespesa;
+                                  newRow.insertCell(4).innerHTML = dataVencimento;
+                                  newRow.insertCell(5).innerHTML = valorOriginal;
+                                  newRow.insertCell(6).innerHTML = valorMulta;
+                                  newRow.insertCell(7).innerHTML = valorCorrecao;
+                                  newRow.insertCell(8).innerHTML = ativo;
+                                  newRow.insertCell(9).innerHTML = observacao
+                                  newRow.insertCell(10).innerHTML = `<button onclick="editLancamento(this)">Editar</button>
+                                  <button onclick="deleteLancamento(this)">Excluir</button>`;
+    
+                                  document.getElementById('lancamentoForm').reset();
+
+                              } else {
+                                  updateLancamento();
+                            }
+                          }
+
+                        function editLancamento(td) {
+                            selectedRow = td.parentElement.parentElement;
+                            document.getElementById('idBase').value = selectedRow.cells[0].innerHTML;
+                            document.getElementById('idUsuario').value = selectedRow.cells[1].innerHTML;
+                            document.getElementById('idDespesa').value = selectedRow.cells[2].innerHTML;
+                            document.getElementById('competenciaDespesa').value = selectedRow.cells[3].innerHTML;
+                            document.getElementById('dataVencimento').value = selectedRow.cells[4].innerHTML;
+                            document.getElementById('valorOriginal').value = selectedRow.cells[5].innerHTML;
+                            document.getElementById('valorMulta').value = selectedRow.cells[6].innerHTML;
+                            document.getElementById('valorCorrecao').value = selectedRow.cells[7].innerHTML;
+                            document.getElementById('ativo').value = selectedRow.cells[8].innerHTML;
+                            document.getElementById('observacao').value = selectedRow.cells[9].innerHTML;
                         }
+
+                        function updateLancamento() {
+                            if (selectedRow != null) {
+                              selectedRow.cells[0].innerHTML = document.getElementById('idBase').value;
+                              selectedRow.cells[1].innerHTML = document.getElementById('idUsuario').value;
+                              selectedRow.cells[2].innerHTML = document.getElementById('idDespesa').value;
+                              selectedRow.cells[3].innerHTML = document.getElementById('competenciaDespesa').value;
+                              selectedRow.cells[4].innerHTML = document.getElementById('dataVencimento').value;
+                              selectedRow.cells[5].innerHTML = document.getElementById('valorOriginal').value;
+                              selectedRow.cells[6].innerHTML = document.getElementById('valorMulta').value;
+                              selectedRow.cells[7].innerHTML = document.getElementById('valorCorrecao').value;
+                              selectedRow.cells[8].innerHTML = document.getElementById('ativo').value;
+                              selectedRow.cells[9].innerHTML = document.getElementById('observacao').value;
+
+                              selectedRow = null;
+                              document.getElementById('lancamentoForm').reset();
+                            }
+                        }
+
+                        function deleteLancamento(td) {
+                          if (confirm('Tem certeza que deseja excluir este lançamento?')) {
+                              const row = td.parentElement.parentElement;
+                              document.getElementById('lancamentoTable').deleteRow(row.rowIndex);
+                              document.getElementById('lancamentoForm').reset();
+                            }
+                        }
+
                       </script>
                    
 
