@@ -3,7 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testing.annotations.BeforeClass;
+import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
     public String driverPath;
