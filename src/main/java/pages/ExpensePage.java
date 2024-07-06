@@ -45,12 +45,12 @@ public class ExpensePage extends BasePage {
         return this;
     }
 
-    public ExpensePage clicarAdicionarBase () {
+    public ExpensePage clicarAdicionarDespesa () {
         btnAdicionarDespesa.click();
         return this;
     }
 
-    public ExpensePage clicarAtualizarBase () {
+    public ExpensePage clicarAtualizarDespesa () {
         btnAtualizarDespesa.click();
         return this;
     }
