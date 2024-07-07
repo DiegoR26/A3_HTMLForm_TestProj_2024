@@ -5,4 +5,12 @@ import pages.LoginPage;
 
 public class LoginPageTest extends BaseTest {
 
+
+
+
+
+
+    public LoginPageTest() {
+        super("LoginPage.html");
+    }
 }

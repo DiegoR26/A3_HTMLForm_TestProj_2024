@@ -4,4 +4,11 @@ import org.testng.annotations.Test;
 import pages.EntryPage;
 
 public class EntryPageTest extends BaseTest {
+
+
+
+
+    public EntryPageTest() {
+        super("EntryCRUD.html");
+    }
 }

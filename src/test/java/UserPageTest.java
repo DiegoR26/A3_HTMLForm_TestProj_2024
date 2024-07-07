@@ -5,4 +5,10 @@ import pages.UserPage;
 
 public class UserPageTest extends BaseTest {
 
+
+
+
+    public UserPageTest() {
+        super("UserCRUD.html");
+    }
 }

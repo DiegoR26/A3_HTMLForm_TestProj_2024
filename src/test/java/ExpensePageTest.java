@@ -5,4 +5,12 @@ import pages.ExpensePage;
 
 public class ExpensePageTest extends BaseTest {
 
+
+
+
+
+
+    public ExpensePageTest() {
+        super("ExpenseCRUD.html");
+    }
 }
