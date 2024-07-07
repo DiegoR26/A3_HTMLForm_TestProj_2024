@@ -9,7 +9,7 @@ public class AddressPageTest extends BaseTest {
     public void inserirNomeDaBase() {
         AddressPage page = new AddressPage(getDriver());
 
-        String resultadoFinal = page.informarNomeBase("Santanna do Livramento").toString();
+        String resultadoFinal = page.informarNomeBase("Santanna do Livramento").clicarAdicionarBase().buscarResultadoCadastro();
 
         Assert.assertTrue(resultadoFinal.contains("Santanna do Livramento"));
     }

@@ -10,4 +10,8 @@ public class BasePage {
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
+
+    public String buscarResultadoCadastro() {
+        return driver.getPageSource();
+    }
 }
