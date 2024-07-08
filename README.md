@@ -1,48 +1,42 @@
 # A3_HTMLForm_TestProj_2024
 
-Projeto 1 – Software para gestão de despesas
-O cliente XYZ atualmente utiliza uma planilha em excel para gerir as despesas da
-empresa, o que gera descontrole, erros de lançamentos, problemas de
-rastreamento, entre outros.
-Dessa forma é necessário desenvolver um sistema web, se possível que seja
-responsivo, onde se possa lançar as despesas e rastrear os lançamentos através
-de perfis de usuários pré-definidos.
-Os dados geridos são:
-• Nome do credor
-• Base Física (local)
-• Tipo de Despesa
-• Mês de Competência
-• Data de Vencimento
-• Valor líquido
-• Valor multa
-• Valor juros
-• Valor Correção
-• Valor Total
-O cliente solicita que se possa fazer a manutenção de dados (CRUD) dos
-credores, das bases físicas e dos tipos de despesa.
-O sistema deverá possibilitar a geração de relatórios a partir de alguns filtros,
-como por exemplo: Despesas por credor, despesas por tipo, despesas por bases
-físicas, despesas por período, sendo possível exportá-los para arquivo CSV.
-O sistema deverá permitir a criação de usuários com definição de permissões de
-acesso por um administrador.
-Após o desenvolvimento do software deverá ser realizada a migração dos dados
-da planilha em excel para a base de dados do novo sistema.
-Etapas do projeto:
-1. Modelagem:
-a. Casos de Uso
-b. Classes
-c. Diagrama ER e Modelo Físico
-2. Implementar CRUD - Perfis de Acesso
-3. Implementar CRUD – Usuários
-4. Implementar Tela de login
-5. Implementar CRUD - Credores
-6. Implementar CRUD - Bases Físicas
-7. Implementar CRUD - Tipo de Despesas
-8. Implementar CRUD - Lançamento de Despesas
+Introdução
 
-9. Implementar Relatório com filtros:
-a. Despesas por credor
-b. Despesas por tipo
-c. Despesas por bases físicas
-d. Período (de..até)
+    Este projeto visa aplicar os fundamentos dos testes de software utilizando formulários em HTML que simulam os pontos de entrada do software a ser desenvolvido pelos alunos de outra turma.
+
+Tecnologias Utilizadas
+
+    Java
+    Selenium
+    TestNG
+    HTML
+    CSS
+    JavaScript
+
+Ideia Geral do Projeto
+
+    O projeto foi elaborado com base nas instruções para a construção do software a ser testado e na estrutura do banco de dados. Trata-se de um sistema de gestão de despesas que organiza e gera despesas da empresa, categorizando-as por tipo de despesa, credores e suas bases fixas. Além disso, o sistema inclui funcionalidades de login, gerenciamento de usuários e perfis com definições de permissões de acesso.
+
+    A estrutura do banco de dados especifica os atributos, seus tipos, tamanhos e vínculos com outras tabelas. Com essas informações, construímos arquivos HTML que contêm campos de entrada para os valores a serem enviados ao banco de dados, simulando cenários de login, gerenciamento de usuários, despesas, bases fixas, credores e tipos de despesa.
+
+    Utilizando esses cenários, desenvolvemos testes para o front-end do projeto, verificando a consistência das informações inseridas. Para automatizar o processo, utilizamos o Selenium, que simula a interação com os formulários. A validação das informações inseridas é feita pelo TestNG, que verifica a existência das informações no arquivo HTML, retornando um resultado positivo ou negativo pelo método assert.
+
+Informações
+
+Integrantes
+    Diego Rocha
+    Samuel Sant'Anna
+    Douglas Mello
+    Renato Schipper
+
+Curso
+    Análise e Desenvolvimento de Sistemas
+    UC: Gestão e Qualidade de Software 2024/1
+    FADERGS - Faculdade de Desenvolvimento do Rio Grande do Sul
+
+Professor
+    Deivith Cunha
+
+
+
 
