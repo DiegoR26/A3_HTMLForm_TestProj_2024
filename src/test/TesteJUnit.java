@@ -24,7 +24,7 @@ public class TesteJUnit  {
 		Select combo = new Select(elemnt);
 		combo.selectByVisibleText("Não");
 		driver.findElement(By.id("adicionarUsuario")).click();
-//		driver.quit();
+		driver.quit();
 		
 	}
 	@Test
@@ -40,7 +40,7 @@ public class TesteJUnit  {
 		Alert alert = driver.switchTo().alert();
 		Assert.assertEquals("Por favor, preencha todos os campos obrigatórios.", alert.getText());
 		System.out.println(alert.getText());
-//		driver.quit();
+		driver.quit();
 		
 	}
 
