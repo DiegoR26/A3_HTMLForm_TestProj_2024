@@ -178,6 +178,139 @@ tBody button {
 }
 
 /* -------------- Usuarios ----------------*/
+#TCMainContent {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+form#adicionarUsuario{
+    align-items: center;
+    
+}
+
+form#usuarioForm {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    margin-bottom: 20px;
+}
+
+form#usuarioForm label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+}
+
+
+form#usuarioForm select {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form#usuarioForm button {
+    border-left: 100px;
+    background-color: rgb(188, 34, 35);;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    align-items: center;
+}
+
+form#usuarioForm button:hover {
+    background-color: rgb(97, 5, 5);;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#tableContainer {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#usuarioTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#usuarioTable thead {
+    background-color: #f4f4f4;
+}
+
+#usuarioTable th, 
+#usuarioTable td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#usuarioTable th {
+    background-color: rgb(188, 34, 35);
+    color: white;
+}
+
+#usuarioTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#usuarioTable tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#usuarioTable td {
+    color: #555;
+}
+
+#usuarioTable td:last-child {
+    text-align: center;
+}
+.buttonContainer {
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#tableContainer {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
 /* -------------- Credores ----------------*/
 

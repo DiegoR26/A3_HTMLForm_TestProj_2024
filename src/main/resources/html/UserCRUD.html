@@ -37,32 +37,34 @@
 
                     <div id="TCMainContent">
                         <form id="usuarioForm">
-                            <label for="nomeUsuario">Nome do Usuário:</label>
+                            <label for="nomeUsuario" id="labels">Nome do Usuário:</label>
                             <input type="text" id="nomeUsuario" name="nomeUsuario" required><br>
                         
-                            <label for="emailUsuario">Email do Usuário:</label>
+                            <label for="emailUsuario" id="labels">Email do Usuário:</label>
                             <input type="email" id="emailUsuario" name="emailUsuario" required><br>
                         
-                            <label for="loginUsuario">Login do Usuário:</label>
+                            <label for="loginUsuario" id="labels">Login do Usuário:</label>
                             <input type="text" id="loginUsuario" name="loginUsuario" required><br>
                         
-                            <label for="senhaUsuario">Senha do Usuário:</label>
+                            <label for="senhaUsuario" id="labels">Senha do Usuário:</label>
                             <input type="password" id="senhaUsuario" name="senhaUsuario" required><br>
                         
-                            <label for="telefoneCelular">Telefone Celular:</label>
+                            <label for="telefoneCelular" id="labels">Telefone Celular:</label>
                             <input type="text" id="telefoneCelular" name="telefoneCelular"><br>
 
-                            <label for="perfilUsuario">Perfil de Usuário:</label>
+                            <label for="perfilUsuario" id="labels">Perfil de Usuário:</label>
                             <input type="text" id="perfilUsuario" name="perfilUsuario"><br>
                         
-                            <label for="ativo">Ativo:</label>
+                            <label for="ativo" >Ativo:</label>
                             <select id="ativo" name="ativo">
                               <option value="S">Sim</option>
                               <option value="N">Não</option>
                             </select><br>
                         
-                            <button id="adicionarUsuario" type="button" onclick="addUsuario()">Adicionar Usuário</button>
-                            <button id="atualizarUsuario" type="button" onclick="updateUsuario()">Atualizar Usuário</button>
+                            <div class="buttonContainer">
+                              <button id="adicionarUsuario" type="button" onclick="addUsuario()">Adicionar Usuário</button>
+                              <button id="atualizarUsuario" type="button" onclick="updateUsuario()">Atualizar Usuário</button>
+                          </div>
                           </form>
                         
                           <h2>Lista de Usuários</h2>
