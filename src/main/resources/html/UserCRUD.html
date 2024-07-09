@@ -97,6 +97,11 @@
                               const telefoneCelular = document.getElementById('telefoneCelular').value;
                               const perfilUsuario = document.getElementById('perfilUsuario').value;
                               const ativo = document.getElementById('ativo').value;
+
+                              if (!nomeUsuario || !emailUsuario || !loginUsuario || !senhaUsuario || !telefoneCelular || !perfilUsuario) {
+                                alert('Por favor, preencha todos os campos obrigatórios.');
+                                return;
+                              }
                         
                               if (selectedRow == null) {
                                 const table = document.getElementById('usuarioTable').getElementsByTagName('tbody')[0];
