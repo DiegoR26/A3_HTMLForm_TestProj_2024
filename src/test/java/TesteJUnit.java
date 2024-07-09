@@ -24,6 +24,7 @@ public class TesteJUnit  {
 		Select combo = new Select(elemnt);
 		combo.selectByVisibleText("Não");
 		driver.findElement(By.id("adicionarUsuario")).click();
+		System.out.println(driver.findElement(By.id("tableContainer")).getText());
 		driver.quit();
 		
 	}
